@@ -4,7 +4,7 @@ local MyHttpCatHandler = {
 }
 
 function MyHttpCatHandler:response(conf)
-    kong.response.set_header("X-MyHttpCat", "http://http.cat/"..kong.response.get_status());
+    kong.response.set_header(conf.response_header_name, "http://http.cat/"..kong.response.get_status());
 end
 
 
